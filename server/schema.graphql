@@ -1,4 +1,5 @@
 type Query {
+    job(id: ID!) : Job #TO get a single job
     jobs: [Job] #[] => array of jobs
 }
 

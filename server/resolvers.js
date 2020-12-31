@@ -1,6 +1,11 @@
 const db = require('./db')
 
 const Query = {
+    // Thie 1st arg to a resolver() is the parent value, which in this case is the root obj
+    // The parent element for the Company is job, so passing in job, similarly, since Query being the root-
+    //- query, the parent object to be passed innto the resolver is the root Obj
+    // args will contain the args passed in the GraphQL query
+    job: (root, { id }) => db.jobs.get(id),
     jobs: () => db.jobs.list(),
 };
 
