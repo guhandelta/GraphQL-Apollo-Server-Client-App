@@ -24,7 +24,7 @@ const typeDefs =  gql(fs.readFileSync('./schema.graphql', { encoding: 'utf8' }))
 const resolvers = require('./resolvers')
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
-// applyMiddleware() => Integrates Apollo server into the Express app, instead of running it as a standalone server
+// applyMiddleware() => Integrates Apollo server into Express app, rather than running it as a standalone server
 apolloServer.applyMiddleware({ app, path: '/graphql' }); 
 
 app.post('/login', (req, res) => {

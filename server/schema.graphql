@@ -1,3 +1,9 @@
 type Query {
-    greeting: String
+    jobs: [Job] #[] => array of jobs
+}
+
+type Job {
+    id: ID! #ID type is an graphQL provided type, sent as a String
+    title: String
+    description: String
 }
